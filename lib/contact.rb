@@ -1,7 +1,7 @@
 class Contact
   @@contacts = []
 
-  attr_reader(:first_name, :last_name, :company, :job_title, :contact_type)
+  attr_reader(:first_name, :last_name, :company, :job_title, :contact_type, :addresses)
 
   def initialize(attributes)
     @first_name = attributes.fetch(:first_name)
@@ -12,8 +12,8 @@ class Contact
     @addresses = []
   end
 
-  def add_address
-    @addresses.push
+  def add_address(address)
+    @addresses.push(address)
   end
 
   def save()
