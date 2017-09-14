@@ -33,6 +33,6 @@ class Contact
   end
 
   def self.sort()
-    @@contacts.sort_by {|x| x.first_name}
+    @@contacts.sort_by {|x| x.first_name.downcase}
   end
 end

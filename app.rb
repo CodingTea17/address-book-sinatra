@@ -5,7 +5,7 @@ require('./lib/contact')
 require('pry')
 
 get('/') do
-  @contacts = Contact.all
+  @contacts = Contact.sort
   erb(:input)
 end
 
@@ -23,6 +23,6 @@ end
 post('/output') do
   item = Contact.new({:first_name=>params["first_name"],:last_name=>params["last_name"],:company=>params["company_name"],:job_title=>params["job_title"],:contact_type=>params["contact_type"]})
   item.save()
-  @contacts = Contact.all
+  @contacts = Contact.sort
   erb(:input)
 end
